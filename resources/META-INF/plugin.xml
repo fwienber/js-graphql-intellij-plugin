@@ -10,7 +10,7 @@
 <idea-plugin>
   <id>com.intellij.lang.jsgraphql</id>
   <name>JS GraphQL</name>
-  <version>2.0.0-alpha-3</version>
+  <version>2.0.0-alpha-4</version>
   <vendor>Jim Kynde Meyer - jimkyndemeyer@gmail.com</vendor>
 
   <description><![CDATA[
@@ -41,6 +41,9 @@
 
   <depends>com.intellij.modules.lang</depends>
   <depends optional="true" config-file="graphql-javascript.xml">JavaScript</depends>
+
+  <depends>com.intellij.jsp</depends>
+  <depends>com.intellij.spring</depends>
 
   <extensions defaultExtensionNs="com.intellij">
 
@@ -276,6 +279,7 @@
     <multiHostInjector implementation="JSGraphQLTemplateFragmentLanguageInjector" order="first" />
     -->
     <languageInjector implementation="com.intellij.lang.jsgraphql.endpoint.doc.ide.injection.JSGraphQLEndpointDocInjector" />
+    <languageInjector implementation="com.intellij.lang.jsgraphql.springel.GraphQLSchemaSpringELInjector" />
 
 
     <!-- Settings -->

@@ -145,7 +145,7 @@ variable ::= VARIABLE_NAME {pin=1 extends=value implements="com.intellij.psi.Psi
 
 defaultValue ::= '=' value {pin=1}
 
-stringValue ::= quotedString {extends=value}
+stringValue ::= quotedString {extends=value mixin="com.intellij.lang.jsgraphql.psi.impl.GraphQLStringValuePsiElement"}
  
 type ::= nonNullType | listType | typeName
 

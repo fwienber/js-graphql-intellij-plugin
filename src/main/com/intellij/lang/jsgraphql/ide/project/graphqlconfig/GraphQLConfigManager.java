@@ -349,7 +349,7 @@ public class GraphQLConfigManager {
             Streams.concat(ymlFiles.stream(), yamlFiles.stream()).forEach(yamlFile -> {
                 try {
                     final String yamlText = new String(yamlFile.contentsToByteArray(), yamlFile.getCharset());
-                    final GraphQLConfigData graphQLConfigData = yaml.load(yamlText);
+                    final GraphQLConfigData graphQLConfigData = (GraphQLConfigData) yaml.load(yamlText);
                     newConfigPathToConfigurations.putIfAbsent(yamlFile.getParent().getPath(), graphQLConfigData);
                 } catch (IOException | YAMLException e) {
                     createParseErrorNotification(yamlFile, e);

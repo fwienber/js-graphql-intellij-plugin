@@ -9,5 +9,5 @@ package com.intellij.lang.jsgraphql.psi;
 
 import com.intellij.psi.PsiElement;
 
-public interface GraphQLElement extends PsiElement {
+public interface  GraphQLElement extends PsiElement {
 }
